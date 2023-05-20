@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div style="border: 2px solid black">
+    <canvas id="canvas" width=" 1280 " height="1000 "></canvas>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    //heading
+
+    ctx.font = "40px Georgia";
+    ctx.fillText("Different Advances Graphical Shapes usingHTML CANVAS.", 10, 50);
+    line(canvas, 10, 1000, 70)
+    //octagon
+    polygon(canvas, 80, 150, 80, 8, 'green')
+    //hexagon
+    polygon(canvas, 250, 150, 80, 6, 'red')
+
+    //heptagon
+    polygon(canvas, 400, 150, 80, 5, 'yellow')
+
+    //septagon
+    polygon(canvas, 80, 330, 80, 7, 'blue')
+
+    //drawStar(cx,cy,spikes,outerRadius,innerRadius,color)
+    drawStar(250, 330, 5, 80, 40, 'skyblue');
+
+    drawStar(400, 330, 6, 80, 40, 'violet');
+
+    drawStar(80, 500, 7, 80, 40, 'orange');
+
+  </script>
+
+</body>
+
+</html>

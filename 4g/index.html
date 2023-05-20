@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Bangalore Houses</title>
+ </head>
+ <body onload = "loadMap()">
+ <h2>Bangalore Houses</h2>
+ <div id = "map" style = "width:640px; height:480px;"></div>
+ <script>
+ // fake JSON call
+ function getJSONMarkers() {
+ const markers = [
+ {
+ name: "Chikka Tirupathi",
+ location: [12.896745, 77.866745]
+ },
+ {
+ name: "Whitefield",
+ location: [12.971389, 77.750130]
+ },
+ {
+ name: "Uttarahalli ",
+Data Visualization (3160717) 190090107014
+CKPCET
+ location: [12.906525, 77.540558]
+ }
+ ];
+ return markers;
+ }
+ function loadMap() {
+ // Initialize Google Maps
+ const mapOptions = {
+ center:new google.maps.LatLng(25.2048, 55.2708),
+ zoom: 11
+ }
+ const map = new google.maps.Map(document.getElementById("map"),
+mapOptions);
+ // Load JSON Data
+ const hotelMarkers = getJSONMarkers();
+ // Initialize Google Markers
+ for(hotel of hotelMarkers) {
+ let marker = new google.maps.Marker({
+ map: map,
+ position: new google.maps.LatLng(hotel.location[0], hotel.l
+ocation[1]),
+ title: hotel.name
+ })
+ }
+ }
+ </script>
+ <script src = "https://maps.googleapis.com/maps/api/js"></script>
+ </body>
+</html>
